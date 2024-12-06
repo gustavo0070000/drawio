@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="IDP-OCR-AWS">
+    <mxGraphModel dx="1424" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Start Node -->
+        <mxCell id="Start" value="Input Request" style="shape=ellipse;fillColor=#1E88E5;fontColor=#FFFFFF;strokeColor=#0D47A1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- API Node -->
+        <mxCell id="API" value="API Endpoint&#xA;IDP-OCR-AWS" style="shape=rectangle;rounded=1;fillColor=#00ACC1;fontColor=#FFFFFF;strokeColor=#006064;" vertex="1" parent="1">
+          <mxGeometry x="250" y="100" width="180" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Document Input -->
+        <mxCell id="DocType" value="Document Input&#xA;URL or CFT_ID" style="shape=hexagon;fillColor=#FFB74D;fontColor=#FFFFFF;strokeColor=#F57C00;" vertex="1" parent="1">
+          <mxGeometry x="500" y="100" width="160" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Operation Node -->
+        <mxCell id="Operation" value="Select Operation&#xA;OCR Operation Type" style="shape=rhombus;fillColor=#FF7043;fontColor=#FFFFFF;strokeColor=#BF360C;" vertex="1" parent="1">
+          <mxGeometry x="750" y="100" width="120" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- JSON Response -->
+        <mxCell id="JsonResponse" value="JSON Response&#xA;Extracted Text + Bounding Boxes" style="shape=rectangle;rounded=1;fillColor=#43A047;fontColor=#FFFFFF;strokeColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="950" y="300" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Visualize -->
+        <mxCell id="Visualize" value="Bounding Boxes&#xA;Visualization Service" style="shape=rectangle;rounded=1;fillColor=#8E24AA;fontColor=#FFFFFF;strokeColor=#4A148C;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="300" width="200" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Operations -->
+        <mxCell id="O1" value="DetectDocumentText" style="shape=rectangle;rounded=1;fillColor=#FFCDD2;fontColor=#000000;strokeColor=#B71C1C;" vertex="1" parent="1">
+          <mxGeometry x="750" y="200" width="180" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="O2" value="AnalyzeDocument" style="shape=rectangle;rounded=1;fillColor=#C5E1A5;fontColor=#000000;strokeColor=#558B2F;" vertex="1" parent="1">
+          <mxGeometry x="750" y="300" width="180" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="O3" value="StartDocumentTextDetection" style="shape=rectangle;rounded=1;fillColor=#FFF59D;fontColor=#000000;strokeColor=#F9A825;" vertex="1" parent="1">
+          <mxGeometry x="750" y="400" width="180" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="O4" value="GetDocumentTextDetection" style="shape=rectangle;rounded=1;fillColor=#80DEEA;fontColor=#000000;strokeColor=#00838F;" vertex="1" parent="1">
+          <mxGeometry x="750" y="500" width="180" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="O5" value="StartDocumentAnalysis" style="shape=rectangle;rounded=1;fillColor=#D1C4E9;fontColor=#000000;strokeColor=#4527A0;" vertex="1" parent="1">
+          <mxGeometry x="750" y="600" width="180" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="O6" value="GetDocumentAnalysis" style="shape=rectangle;rounded=1;fillColor=#EF9A9A;fontColor=#000000;strokeColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="750" y="700" width="180" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Connections -->
+        <mxCell id="Edge1" edge="1" source="Start" target="API" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="Edge2" edge="1" source="API" target="DocType" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="Edge3" edge="1" source="DocType" target="Operation" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="Edge4" edge="1" source="Operation" target="O1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="Edge5" edge="1" source="Operation" target="O2" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="Edge6" edge="1" source="Operation" target="O3" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="Edge7" edge="1" source="O1" target="JsonResponse" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="Edge8" edge="1" source="JsonResponse" target="Visualize" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
